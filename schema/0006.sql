@@ -1,0 +1,1 @@
+CREATE INDEX index_item_guid ON item (guid(32));

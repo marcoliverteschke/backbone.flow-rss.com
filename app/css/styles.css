@@ -1,0 +1,393 @@
+@font-face {
+  font-family: 'Modern Pictograms';
+  src: url('/font/modern-pictograms/modernpics.otf');
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+/*---------------------------------------------------
+    LESS Elements 0.6
+  ---------------------------------------------------
+    A set of useful LESS mixins by Dmitry Fadeyev
+    Special thanks for mixin suggestions to:
+      Kris Van Herzeele,
+      Benoit Adam,
+      Portenart Emile-Victor,
+      Ryan Faerman
+
+    More info at: http://lesselements.com
+-----------------------------------------------------*/
+html {
+  font-size: 62.5%;
+  /* Sets up the Base 10 stuff */
+}
+body {
+  font-size: 10px;
+  font-size: 1rem;
+  font-family: "Helvetica Neue";
+}
+#login-form {
+  background-color: #999999;
+  padding: 40px 0;
+  position: absolute;
+  top: calc((100% - 100px) / 2);
+  width: 100%;
+}
+#login-form form {
+  margin: 0 auto;
+  width: 30%;
+}
+#login-form form input {
+  border: none;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+.container--feeds_container {
+  background-color: #ffffff;
+  display: none;
+  height: calc(100% - 60px);
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 0;
+  padding-top: calc((10px * 2) + 4rem);
+  position: fixed;
+  top: calc((10px * 2) + 4rem);
+  width: 100%;
+  z-index: 2;
+  -webkit-overflow-scrolling: touch;
+}
+.container--feeds_container .item--feed_item h1 {
+  color: #000000;
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  font-size: 1.5rem;
+  line-height: 20px;
+  margin: 0;
+  padding: 15px 20px;
+  padding-right: 60px;
+  position: relative;
+  text-decoration: none;
+}
+.container--feeds_container .item--feed_item [class*="bubble--"] {
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-size: 1rem;
+  line-height: 10px;
+  position: absolute;
+  right: 10px;
+  top: calc((100% - 20px) / 2);
+}
+.container--feeds_container .item--feed_item:hover h1,
+.container--feeds_container .item--feed_item--active h1 {
+  background-color: #f2f2f2;
+}
+.container--feeds_container .item--feed_item:hover [class*="bubble--"],
+.container--feeds_container .item--feed_item--active [class*="bubble--"] {
+  background-color: #ffffff;
+}
+.container--feeds_container .item--feed_item--status_error h1::before {
+  content: "!";
+  color: #ff0000;
+  font-family: "Modern Pictograms";
+  margin-right: 10px;
+}
+body.menu-visible .container--feeds_container {
+  display: block;
+}
+body.menu-visible .container--global_actions .link--action_menu::before {
+  background-color: #000000;
+  color: #ffffff;
+}
+.container--items_container {
+  padding: 0;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+.container--items_container .item {
+  padding: 20px;
+}
+.container--items_container .item h1 {
+  color: #000000;
+  cursor: pointer;
+  font-size: 20px;
+  font-size: 2rem;
+  line-height: 30px;
+  margin: 0;
+}
+.container--items_container .item:hover {
+  background-color: #f2f2f2;
+}
+.container--items_container .item .container--item_content {
+  display: none;
+  font-size: 17.5px;
+  font-size: 1.75rem;
+  line-height: 1.5;
+  padding: 10px 0;
+}
+.container--items_container .item .container--item_content img,
+.container--items_container .item .container--item_content picture {
+  height: auto !important;
+  max-width: 100%;
+}
+.container--items_container .item .container--item_content a {
+  color: #000000;
+}
+.container--items_container .item .container--item_content a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.container--items_container .item .container--item_content a:visited {
+  color: #999999;
+}
+.container--items_container .item .container--item_content blockquote,
+.container--items_container .item .container--item_content q {
+  font-family: "Georgia";
+  padding: 20px;
+  font-style: italic;
+}
+.container--items_container .item--item_active {
+  background-color: #f2f2f2;
+}
+.container--items_container .item--item_starred h1 {
+  text-shadow: 0 0 2px #dddd00;
+}
+.container--items_container .item--item_starred [class*="--item_meta_bar"] .link--action_star::before {
+  color: #dddd00;
+}
+.container--items_container .item--item_read h1 {
+  color: #999999;
+}
+.container--items_container [class*="--item_meta_bar"] {
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding: 5px 0;
+}
+.container--items_container [class*="--item_meta_bar"] .link {
+  color: #000000;
+  display: inline-block;
+  font-size: 20px;
+  font-size: 2rem;
+  margin: 0 0 0 10px;
+  text-decoration: none;
+}
+.container--items_container [class*="--item_meta_bar"] .link--action_star::before {
+  content: "*";
+  font-family: 'Modern Pictograms';
+}
+.container--items_container [class*="--item_meta_bar"] .link--action_original::before {
+  content: "o";
+  font-family: 'Modern Pictograms';
+}
+.container--items_container [class*="--item_meta_bar"] .link--action_instapaper::before {
+  content: "a";
+  font-family: 'Modern Pictograms';
+}
+.container--items_container [class*="--item_meta_bar"] .link--feed {
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+.there-is-nothing-here {
+  color: #ffffff;
+  font-size: 50px;
+  font-size: 5rem;
+  margin: 5%;
+  text-align: center;
+  text-shadow: 0 0 50px #000000;
+}
+.container--global_actions {
+  background-color: #999999;
+  left: 0;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+}
+.container--global_actions .link {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 40px;
+  font-size: 4rem;
+  width: 25%;
+}
+.container--global_actions .link::before {
+  font-family: 'Modern Pictograms';
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.container--global_actions .link--action_menu::before {
+  content: "4";
+}
+.container--global_actions .link--action_mark_all_read::before {
+  content: "%";
+}
+.container--global_actions .link--action_previous_item::before {
+  content: '-';
+}
+.container--global_actions .link--action_next_item::before {
+  content: "/";
+}
+.container--feeds_actions {
+  background-color: #bbbbbb;
+  left: 0;
+  padding: 10px 20px;
+  position: fixed;
+  top: calc((10px * 2) + 4rem);
+  width: 100%;
+  z-index: 3;
+  display: flex;
+}
+.container--feeds_actions .link {
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 40px;
+  font-size: 4rem;
+  width: 25%;
+}
+.container--feeds_actions .link::before {
+  font-family: 'Modern Pictograms';
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.container--feeds_actions .link--action_subscribe::before {
+  content: "+";
+}
+.container--feeds_actions .link--action_edit_feed::before {
+  content: "r";
+}
+.container--feeds_actions .link--action_unsubscribe::before {
+  content: "I";
+}
+.container--feeds_actions .link.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.container--subscription_form,
+.container--edit_form {
+  background-color: #999999;
+  display: none;
+  padding: 40px 0;
+  position: absolute;
+  top: calc((100% - 100px) / 2);
+  width: 100%;
+  z-index: 4;
+}
+.container--subscription_form form,
+.container--edit_form form {
+  margin: 0 auto;
+  width: 30%;
+}
+.container--subscription_form form input,
+.container--edit_form form input {
+  border: none;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+}
+.container--subscription_form--visible,
+.container--edit_form--visible {
+  display: block;
+}
+.container--progress_container {
+  background-color: #ffffff;
+  bottom: 0;
+  display: none;
+  height: 0.5em;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
+}
+.container--progress_container span {
+  background-color: #55aaff;
+  display: block;
+  height: 1em;
+  transition: width 0.5s;
+  width: 0;
+}
+@media screen and (min-width: 600px) {
+  .container--feeds_container {
+    display: block !important;
+    top: 0;
+    height: 100%;
+    overflow: scroll;
+    padding: 0;
+    padding-top: calc((10px * 2) +  4rem);
+    width: calc(100% / 3);
+  }
+  .container--items_container {
+    top: 0;
+    right: 60px;
+    width: calc(((100% / 3) * 2) - 60px);
+  }
+  .container--global_actions {
+    right: 0;
+    width: 60px;
+    height: 100%;
+    left: auto;
+    padding: 20px 10px;
+    display: block;
+  }
+  .container--global_actions .link {
+    display: inline-block;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .container--global_actions .link--action_menu {
+    display: none;
+  }
+  .container--feeds_actions {
+    top: 0;
+    width: calc(100% / 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container--feeds_container {
+    width: 25%;
+  }
+  .container--feeds_container [class*="item--"] h1 {
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 30px;
+    padding: 20px;
+    padding-right: 80px;
+  }
+  .container--feeds_container [class*="item--"] [class*="bubble--"] {
+    padding: 5px 20px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 15px;
+    top: calc((100% - 25px) / 2);
+  }
+  .container--items_container {
+    right: 0;
+    width: 75%;
+  }
+  .container--global_actions {
+    display: none;
+  }
+  .container--feeds_actions {
+    top: 0;
+    width: 25%;
+  }
+}

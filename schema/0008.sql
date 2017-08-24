@@ -1,0 +1,1 @@
+CREATE INDEX items_time_read ON item(time_read);

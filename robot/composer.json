@@ -1,0 +1,6 @@
+{
+    "require": {
+        "simplepie/simplepie": "^1.5",
+        "gabordemooij/redbean": "^4.3"
+    }
+}

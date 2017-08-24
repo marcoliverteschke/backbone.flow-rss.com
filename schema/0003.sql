@@ -1,0 +1,1 @@
+RENAME TABLE items TO item, feeds TO feed;
