@@ -330,6 +330,7 @@ var FeedItemView = Backbone.View.extend({
 		} else {
 			$('.container--feeds_actions .link--action_edit_feed,.link--action_unsubscribe').addClass('disabled');
 		}
+		this.model.fetch();
 		currentHashBang = this.model.attributes.url;
 		currentFeedModel = this.model;
 		app.navigate(this.model.attributes.url, {trigger: true});
