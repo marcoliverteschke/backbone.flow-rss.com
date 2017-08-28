@@ -7,6 +7,8 @@
  * update unread count on feed when item is read on new or starred view
  */
 
+'use strict';
+
 var Feed = Backbone.Model.extend();
 var Item = Backbone.Model.extend();
 var NoItemsTemplate = _.template($('.template--no_items').html());
@@ -233,7 +235,7 @@ $('.link--action_menu').on('click', function(){
 var itemsFetchOptions = {
 	success: function(collection, response, options){
 		$('.container--items_container').empty();
-		for(item_key in response) {
+		for(var item_key in response) {
 			var item_item = response[item_key];
 			var item_view = new ItemView({
 				model: new Item(item_item),
