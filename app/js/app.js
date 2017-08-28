@@ -26,7 +26,7 @@ $('body').on('keyup', function(event){
 	switch(parseInt(event.which)) {
 		case A_KEY:
 			if(event.shiftKey) {
-				mark_all_items_read();
+				mark_all_items_read(currentFeedModel.id === 'unread_items');
 			}
 			break;
 		case J_KEY:
@@ -148,7 +148,8 @@ function select_previous_item() {
 	}
 }
 
-function mark_all_items_read() {
+function mark_all_items_read(refresh_feeds) {
+	refresh_feeds = typeof refresh_feeds !== 'undefined' ? refresh_feeds : false;
 	var ids_to_mark_as_read = [];
 	setProgressBar(5);
 	$('.item--item_item:not(.item--item_read)').each(function(i, e){
@@ -159,6 +160,13 @@ function mark_all_items_read() {
 		$('.item--item_item:not(.item--item_read)').addClass('item--item_read');
 		currentFeedModel.fetch();
 		unreadItemsFeedModel.fetch();
+		if(refresh_feeds === true) {
+			if(typeof feeds !== 'undefined') {
+				feeds.models.forEach(function(feed_model, feed_index, feeds_array){
+					feed_model.fetch();
+				});
+			}
+		}
 		setProgressBar(100);
 	});
 }
