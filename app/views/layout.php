@@ -5,7 +5,8 @@
 		<title><?php if(isset($title_prefix)) { echo $title_prefix; } ?>Flow RSS</title>
 		<meta name="viewport" content="width=device-width">
 		<meta name="description" content="Flow RSS">
-		<meta name="author" content="SitePoint">
+		<meta name="author" content="Marc-Oliver Teschke">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-eval' 'unsafe-inline'; img-src https://*;">
 		<link rel="stylesheet" href="/vendor/components/normalize.css/normalize.css">
 		<link rel="stylesheet" href="/css/styles.css">
 		<link rel="icon" href="/favicon.png" type="image/png" />
