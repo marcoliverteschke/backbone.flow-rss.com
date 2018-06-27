@@ -7,6 +7,12 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ce89ac35a6c330c55f4710717db9ff78' => $vendorDir . '/kriswallsmith/assetic/src/functions.php',
+    '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => $vendorDir . '/symfony/polyfill-mbstring/bootstrap.php',
+    '7d8c19660fc7bda7e3f1bb627c20c455' => $vendorDir . '/yooper/stop-words/src/StopWordFactory.php',
     'fc73bab8d04e21bcdda37ca319c63800' => $vendorDir . '/mikecao/flight/flight/autoload.php',
     '5b7d984aab5ae919d3362ad9588977eb' => $vendorDir . '/mikecao/flight/flight/Flight.php',
+    '82b15671fa4352bd2c1ea8902d4c0c5d' => $vendorDir . '/yooper/php-text-analysis/src/helpers/storage.php',
+    'c2fe535f6d51f069823351f60bd6b280' => $vendorDir . '/yooper/php-text-analysis/src/helpers/print.php',
+    '34faac671c44560451a381662d8b697c' => $vendorDir . '/yooper/php-text-analysis/src/helpers/simplified.php',
+    '97c3b78656a7c2fa22581078400c5264' => $vendorDir . '/yooper/php-text-analysis/src/helpers/helpers.php',
 );

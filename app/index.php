@@ -132,6 +132,14 @@
 			Flight::redirect('/');
 		}
 		$item = R::getRow('SELECT *, (SELECT title FROM feed WHERE id = item.feed_id) as feed_title FROM item WHERE id = :item_id ', array(':item_id' => $item_id));
+		$keywords = normalize_tokens(tokenize(strip_tags($item['title'] . ' ' . $item['description'])));
+		$keywords_document = new \TextAnalysis\Documents\TokensDocument($keywords);
+		$keyword_extractor = new \TextAnalysis\Analysis\Keywords\Rake($keywords_document);
+		$item['keywords'] = $keyword_extractor->getKeywordScores();
+
+		$item['description'] = str_replace('href="http:', 'href="https:', $item['description']);
+		$item['description'] = str_replace('src="http:', 'src="https:', $item['description']);
+
 		Flight::lastModified($item['added']);
 		Flight::render('json', array('content' => $item), 'body_content');
 		Flight::render('blank');
