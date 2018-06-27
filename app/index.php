@@ -73,6 +73,12 @@
 		Flight::render('layout');
 	});
 
+	Flight::route('/logout', function(){
+		setcookie('flow_authenticated', null, 0, '/');
+		Flight::set('authenticated', false);
+		Flight::redirect('login');
+	});
+
 	Flight::route('POST /items/read/@timestamp', function($timestamp) {
 		$request = Flight::request();
 		if(is_array($request->data['ids']) && count($request->data['ids']) > 0) {
