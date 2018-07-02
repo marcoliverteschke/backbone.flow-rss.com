@@ -34,8 +34,40 @@
 			$feeds = $this->getRedbean()->getRedbean()->find('feed');
 
 			foreach($feeds as $feed) {
-				$this->updateFeed($feed);
+				if($this->shouldBeUpdated($feed)) {
+					$this->updateFeed($feed);
+				}
 			}
+		}
+
+		public function shouldBeUpdated($feed) {
+			$now = time();
+
+			$last_items_pub_dates = $this->getRedbean()->getDatabaseAdapter()->get('SELECT pub_date FROM item WHERE feed_id = :id ORDER BY pub_date DESC LIMIT 10', [':id' => $feed->id]);
+			
+			// letzter Abrufversuch liegt mehr als einen Tag zurück
+			$time_since_last_fetch = ($now - $feed->last_fetch_finished) / 86400.0;
+			if($time_since_last_fetch >= 1) {
+				return true;
+			}
+
+			if(count($last_items_pub_dates) > 0) {
+				$pub_date_differences = 0;
+				$previous_timestamp = $now;
+				foreach($last_items_pub_dates as $timestamp) {
+					if(isset($timestamp['pub_date'])) {
+						$pub_date_differences += ($previous_timestamp - $timestamp['pub_date']) / 86400.0;
+						$previous_timestamp = $timestamp['pub_date'];
+					}
+				}
+
+				$average_time_between_publications = ($pub_date_differences / count($last_items_pub_dates));
+				$time_since_last_publication = ($now - $last_items_pub_dates[0]['pub_date']) / 86400.0;
+
+				return $time_since_last_publication >= $average_time_between_publications;
+			}
+
+			return false;
 		}
 
 		public function updateFeed($feed) {
