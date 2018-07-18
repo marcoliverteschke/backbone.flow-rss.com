@@ -44,12 +44,6 @@
 			$config['db']['password']
 		);
 
-		// if($_SERVER['SERVER_NAME'] == 'flow-rss.com')
-		// {
-		// 	R::setup('mysql:host=db602287155.db.1and1.com;dbname=db602287155', 'dbo602287155', 'ouD1ahM0oofuushi');
-		// } else {
-		// 	R::setup('mysql:unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock;host=localhost;dbname=flowrss;port=8889', 'root', 'root');
-		// }
 		R::freeze(true);
 
 		$feedHandler = new FeedHandler(R::getToolbox(), new SimplePie());
@@ -132,6 +126,10 @@
 			Flight::redirect('/');
 		}
 		$item = R::getRow('SELECT *, (SELECT title FROM feed WHERE id = item.feed_id) as feed_title FROM item WHERE id = :item_id ', array(':item_id' => $item_id));
+
+		$item['description'] = str_replace('href="http:', 'href="https:', $item['description']);
+		$item['description'] = str_replace('src="http:', 'src="https:', $item['description']);
+		
 		Flight::lastModified($item['added']);
 		Flight::render('json', array('content' => $item), 'body_content');
 		Flight::render('blank');
