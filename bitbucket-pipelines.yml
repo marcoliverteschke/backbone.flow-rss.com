@@ -22,12 +22,3 @@ pipelines:
           name: rsync robot
           script:
             - rsync -aP robot u83047909@home602158197.1and1-data.host:flow-rss.com/htdocs/
-      - step:
-          name: rsync empty config
-          script:
-            - rsync -aP --exclude="*.php" config u83047909@home602158197.1and1-data.host:flow-rss.com/htdocs/        
-      - step:
-          name: rsync live config
-          script:
-            - rsync -aP config/config-prod.php u83047909@home602158197.1and1-data.host:flow-rss.com/htdocs/config/
-        

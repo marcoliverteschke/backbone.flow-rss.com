@@ -1,10 +1,5 @@
 <?php
 
-	/*
-		Making some changes just to test the deployment pipeline
-		Another line
-	*/
-
 	require_once('../config/config.php');
 	require_once('constants.php');
 	require_once('classes/FeedHandler.php');
