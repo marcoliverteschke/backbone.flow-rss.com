@@ -6,12 +6,6 @@
 image: instrumentisto/rsync-ssh
 
 pipelines:
-  default:
-    - step:
-        name: Say something
-        deployment: production
-        script:
-          - echo "This step runs once you click the 'Run' button"
   tags:
     release-*:
       - step:
