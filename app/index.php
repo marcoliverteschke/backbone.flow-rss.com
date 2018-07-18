@@ -2,6 +2,7 @@
 
 	/*
 		Making some changes just to test the deployment pipeline
+		Another line
 	*/
 
 	require_once('../config/config.php');
