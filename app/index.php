@@ -1,13 +1,21 @@
 <?php
 
-	require_once('../config/config.php');
 	require_once('constants.php');
 	require_once('classes/FeedHandler.php');
 	require_once('vendor/autoload.php');
+
 	class_alias('\RedBeanPHP\R','\R');
+	class_alias('\Symfony\Component\Yaml\Yaml','\Yaml');
 
 	Flight::before('start', function(&$params, &$output){
-		global $config;
+		$config_file_path = '../config/config.yml';
+		if(file_exists($config_file_path) && is_file($config_file_path) && is_readable($config_file_path)) {
+			$config = Yaml::parseFile($config_file_path);
+			Flight::set('config', $config);
+		} else {
+			throw new Exception('Could not read config file');
+		}
+
 		$lessc = new lessc;
 		$lessc->ccompile('css/styles.less', 'css/styles.css');
 		$request = Flight::request();
@@ -35,13 +43,13 @@
 		R::setup(
 			sprintf(
 				'mysql:%shost=%s;dbname=%s',
-				isset($config['db']['unix_socket']) && is_string($config['db']['unix_socket']) ? $config['db']['unix_socket'] . ';' : '',
-				$config['db']['host'],
-				$config['db']['database'],
-				isset($config['db']['port']) && is_string($config['db']['port']) ? ';port=' . $config['db']['port'] : ''
+				!empty($config['database']['unix_socket']) ? $config['database']['unix_socket'] . ';' : '',
+				$config['database']['host'],
+				$config['database']['database'],
+				!empty($config['database']['port']) ? ';port=' . $config['database']['port'] : ''
 			), 
-			$config['db']['user'], 
-			$config['db']['password']
+			$config['database']['user'], 
+			$config['database']['password']
 		);
 
 		R::freeze(true);
