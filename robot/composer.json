@@ -1,6 +1,7 @@
 {
     "require": {
         "simplepie/simplepie": "^1.5",
-        "gabordemooij/redbean": "^4.3"
+        "gabordemooij/redbean": "^4.3",
+        "symfony/yaml": "^4.1"
     }
 }
