@@ -3,13 +3,11 @@
 	require_once('vendor/autoload.php');
 
 	class_alias('\RedBeanPHP\R','\R');
+	class_alias('\Symfony\Component\Yaml\Yaml','\Yaml');
 	
 	var_dump($argv);
-	
-	if(isset($argv[1]) && $argv[1] == 'production')
-		R::setup('mysql:host=localhost;dbname=flow_rss_com', 'flow_rss_com', '6Zy4n~n4');
-	else
-		R::setup('mysql:unix_socket=/Applications/MAMP/tmp/mysql/mysql.sock;host=localhost;dbname=flowrss;port=8889', 'root', 'root');
+
+	require_once('db_setup.php');
 	
 	$handle = @fopen('./subscriptions.xml', 'r');
 	if($handle)

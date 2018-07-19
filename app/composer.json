@@ -7,6 +7,7 @@
         "gabordemooij/redbean": "^4.3",
         "oyejorge/less.php": "v1.7.0.14",
         "simplepie/simplepie": "^1.5",
-        "moment/moment": "^2.18"
+        "moment/moment": "^2.18",
+        "symfony/yaml": "^4.1"
     }
 }
