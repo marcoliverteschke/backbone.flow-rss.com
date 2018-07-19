@@ -24,6 +24,7 @@ html {
     More info at: http://lesselements.com
 -----------------------------------------------------*/
 html {
+  background-color: #ffffff;
   font-size: 62.5%;
   /* Sets up the Base 10 stuff */
 }
