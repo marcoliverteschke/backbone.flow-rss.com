@@ -14,7 +14,6 @@ html {
 @import "elements.less";
 
 html {
-	background-color: #ffffff;
 	font-size: 62.5%; /* Sets up the Base 10 stuff */
 }
 
@@ -31,7 +30,6 @@ body {
 }
 
 #login-form {
-	background-color: #999999;
 	padding: 40px 0;
 	position: absolute;
 	top: calc(~"(100% - 100px) / 2");
@@ -43,7 +41,6 @@ body {
 
 		input {
 			border: none;
-			background-color: #ffffff;
 			display: inline-block;
 			padding: 10px;
 			margin: 10px;
@@ -52,7 +49,6 @@ body {
 }
 
 .container--feeds_container {
-	background-color: #ffffff;
 	display: none;
 	height: calc(~"100% - 60px");
 	left: 0;
@@ -70,7 +66,6 @@ body {
 	.item {
 		&--feed_item {
 			h1 {
-				color: #000000;
 				cursor: pointer;
 				display: block;
 				.font-size(1.5);
@@ -84,7 +79,6 @@ body {
 			}
 
 			[class*="bubble--"] {
-				background-color: #f2f2f2;
 				border-radius: 20px;
 				display: inline-block;
 				padding: 5px 10px;
@@ -95,21 +89,10 @@ body {
 				top: calc(~"(100% - 20px) / 2");
 			}
 
-			&:hover, &--active {
-				h1 {
-					background-color: #f2f2f2;
-				}
-
-				[class*="bubble--"] {
-					background-color: #ffffff;
-				}
-			}
-
 			&--status_error {
 				h1 {
 					&::before {
 						content: "!";
-						color: #ff0000;
 						font-family: "Modern Pictograms";
 						margin-right: 10px;
 					}
@@ -122,17 +105,6 @@ body {
 body.menu-visible {
 	.container--feeds_container {
 		display: block;
-	}
-
-	.container--global_actions {
-		.link {
-			&--action_menu {
-				&::before {
-					background-color: #000000;
-					color: #ffffff;
-				}
-			}
-		}
 	}
 }
 
@@ -148,15 +120,10 @@ body.menu-visible {
 		padding: 20px;
 
 		h1 {
-			color: #000000;
 			cursor: pointer;
 			.font-size(2);
 			line-height: 30px;
 			margin: 0;
-		}
-
-		&:hover {
-			background-color: #f2f2f2;
 		}
 
 		.container--item_content {
@@ -170,47 +137,10 @@ body.menu-visible {
 				max-width: 100%;
 			}
 
-			a {
-				color: #000000;
-
-				&:hover {
-					background-color: #000000;
-					color: #ffffff;
-				}
-
-				&:visited {
-					color: #999999;
-				}
-			}
-
 			blockquote, q {
 				font-family: "Georgia";
 				padding: 20px;
 				font-style: italic;
-			}
-		}
-
-		&--item_active {
-			background-color: #f2f2f2;
-		}
-
-		&--item_starred {
-			h1 {
-				text-shadow: 0 0 2px #dddd00;
-			}
-
-			[class*="--item_meta_bar"] {
-				.link--action_star {
-					&::before {
-						color: #dddd00;
-					}
-				}
-			}
-		}
-
-		&--item_read {
-			h1 {
-				color: #999999;
 			}
 		}
 	}
@@ -220,7 +150,6 @@ body.menu-visible {
 		padding: 5px 0;
 
 		.link {
-			color: #000000;
 			display: inline-block;
 			.font-size(2);
 			margin: 0 0 0 10px;
@@ -253,15 +182,12 @@ body.menu-visible {
 }
 
 .there-is-nothing-here {
-	color: #ffffff; 
 	.font-size(5);
 	margin: 5%;
 	text-align: center ;
-	text-shadow: 0 0 50px #000000;
 }
 
 .container--global_actions {
-	background-color: #999999;
 	left: 0;
 	padding: 10px 20px;
 	position: fixed;
@@ -271,7 +197,6 @@ body.menu-visible {
 	display: flex;
 
 	.link {
-		color: #ffffff;
 		cursor: pointer;
 		.font-size(4);
 		width: 25%;
@@ -310,7 +235,6 @@ body.menu-visible {
 }
 
 .container--feeds_actions {
-	background-color: #bbbbbb;
 	left: 0;
 	padding: 10px 20px;
 	position: fixed;
@@ -320,7 +244,6 @@ body.menu-visible {
 	display: flex;
 
 	.link {
-		color: #ffffff;
 		cursor: pointer;
 		.font-size(4);
 		width: 25%;
@@ -358,7 +281,6 @@ body.menu-visible {
 }
 
 .container--subscription_form, .container--edit_form {
-	background-color: #999999;
 	display: none;
 	padding: 40px 0;
 	position: absolute;
@@ -372,7 +294,6 @@ body.menu-visible {
 
 		input {
 			border: none;
-			background-color: #ffffff;
 			display: inline-block;
 			padding: 10px;
 			margin: 10px;
@@ -385,7 +306,6 @@ body.menu-visible {
 }
 
 .container--progress_container {
-	background-color: #ffffff;
 	bottom: 0;
 	display: none;
 	height: 0.5em;
@@ -395,7 +315,6 @@ body.menu-visible {
 	z-index: 4;
 
 	span {
-		background-color: #55aaff;
 		display: block;
 		height: 1em;
 		transition: width 0.5s;
@@ -481,3 +400,258 @@ body.menu-visible {
 	}
 }
 
+// Colors
+html {
+	background-color: #ffffff;
+}
+
+#login-form {
+	background-color: #999999;
+
+	form {
+		input {
+			background-color: #ffffff;
+		}
+	}
+}
+
+.container--feeds_container {
+	background-color: #ffffff;
+
+	.item {
+		&--feed_item {
+			h1 {
+				color: #000000;
+			}
+
+			[class*="bubble--"] {
+				background-color: #f2f2f2;
+			}
+
+			&:hover, &--active {
+				h1 {
+					background-color: #f2f2f2;
+				}
+
+				[class*="bubble--"] {
+					background-color: #ffffff;
+				}
+			}
+
+			&--status_error {
+				h1 {
+					&::before {
+						color: #ff0000;
+					}
+				}
+			}
+		}		
+	}
+}
+
+body.menu-visible {
+	.container--global_actions {
+		.link {
+			&--action_menu {
+				&::before {
+					background-color: #000000;
+					color: #ffffff;
+				}
+			}
+		}
+	}
+}
+
+.container--items_container {
+	.item {
+		h1 {
+			color: #000000;
+		}
+
+		&:hover {
+			background-color: #f2f2f2;
+		}
+
+		.container--item_content {
+			a {
+				color: #000000;
+
+				&:hover {
+					background-color: #000000;
+					color: #ffffff;
+				}
+
+				&:visited {
+					color: #999999;
+				}
+			}
+		}
+
+		&--item_active {
+			background-color: #f2f2f2;
+		}
+
+		&--item_starred {
+			h1 {
+				text-shadow: 0 0 2px #dddd00;
+			}
+
+			[class*="--item_meta_bar"] {
+				.link--action_star {
+					&::before {
+						color: #dddd00;
+					}
+				}
+			}
+		}
+
+		&--item_read {
+			h1 {
+				color: #999999;
+			}
+		}
+	}
+
+	[class*="--item_meta_bar"] {
+		.link {
+			color: #000000;
+		}
+	}
+}
+
+.there-is-nothing-here {
+	color: #ffffff; 
+	text-shadow: 0 0 50px #000000;
+}
+
+.container--global_actions {
+	background-color: #999999;
+
+	.link {
+		color: #ffffff;
+	}
+}
+
+.container--feeds_actions {
+	background-color: #bbbbbb;
+
+	.link {
+		color: #ffffff;
+	}
+}
+
+.container--subscription_form, .container--edit_form {
+	background-color: #999999;
+
+	form {
+		input {
+			background-color: #ffffff;
+		}
+	}
+}
+
+.container--progress_container {
+	background-color: #ffffff;
+
+	span {
+		background-color: #55aaff;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		background-color: #000000;
+	}
+	
+	#login-form {
+		background-color: #404040;
+	}
+	
+	.container--feeds_container {
+		background-color: #000000;
+	
+		.item {
+			&--feed_item {
+				h1 {
+					color: #ffffff;
+				}
+	
+				[class*="bubble--"] {
+					background-color: #404040;
+				}
+	
+				&:hover, &--active {
+					h1 {
+						background-color: #404040;
+					}
+	
+					[class*="bubble--"] {
+						background-color: #303030;
+					}
+				}
+			}
+		}
+	}
+	
+	.container--items_container {
+		.item {
+			h1 {
+				color: #ffffff;
+			}
+	
+			&:hover {
+				background-color: #404040;
+			}
+	
+			.container--item_content {
+				color: #ffffff;
+
+				a {
+					color: #ffffff;
+	
+					&:hover {
+						background-color: #000000;
+					}
+	
+					&:visited {
+						color: #999999;
+					}
+				}
+			}
+	
+			&--item_active {
+				background-color: #404040;
+			}
+	
+			&--item_read {
+				h1 {
+					color: #a0a0a0;
+				}
+			}
+		}
+	
+		[class*="--item_meta_bar"] {
+			color: #ffffff;
+
+			.link {
+				color: #ffffff;
+			}
+		}
+	}
+	
+	.there-is-nothing-here {
+		text-shadow: 0 0 50px #404040;
+	}
+	
+	.container--global_actions {
+		background-color: #404040;
+	}
+	
+	.container--feeds_actions {
+		background-color: #404040;
+	}
+	
+	.container--subscription_form, .container--edit_form {
+		background-color: #606060;
+	}
+}

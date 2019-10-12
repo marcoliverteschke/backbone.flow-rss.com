@@ -24,7 +24,6 @@ html {
     More info at: http://lesselements.com
 -----------------------------------------------------*/
 html {
-  background-color: #ffffff;
   font-size: 62.5%;
   /* Sets up the Base 10 stuff */
 }
@@ -34,7 +33,6 @@ body {
   font-family: "Helvetica Neue";
 }
 #login-form {
-  background-color: #999999;
   padding: 40px 0;
   position: absolute;
   top: calc((100% - 100px) / 2);
@@ -46,13 +44,11 @@ body {
 }
 #login-form form input {
   border: none;
-  background-color: #ffffff;
   display: inline-block;
   padding: 10px;
   margin: 10px;
 }
 .container--feeds_container {
-  background-color: #ffffff;
   display: none;
   height: calc(100% - 60px);
   left: 0;
@@ -67,7 +63,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .container--feeds_container .item--feed_item h1 {
-  color: #000000;
   cursor: pointer;
   display: block;
   font-size: 15px;
@@ -80,7 +75,6 @@ body {
   text-decoration: none;
 }
 .container--feeds_container .item--feed_item [class*="bubble--"] {
-  background-color: #f2f2f2;
   border-radius: 20px;
   display: inline-block;
   padding: 5px 10px;
@@ -91,26 +85,13 @@ body {
   right: 10px;
   top: calc((100% - 20px) / 2);
 }
-.container--feeds_container .item--feed_item:hover h1,
-.container--feeds_container .item--feed_item--active h1 {
-  background-color: #f2f2f2;
-}
-.container--feeds_container .item--feed_item:hover [class*="bubble--"],
-.container--feeds_container .item--feed_item--active [class*="bubble--"] {
-  background-color: #ffffff;
-}
 .container--feeds_container .item--feed_item--status_error h1::before {
   content: "!";
-  color: #ff0000;
   font-family: "Modern Pictograms";
   margin-right: 10px;
 }
 body.menu-visible .container--feeds_container {
   display: block;
-}
-body.menu-visible .container--global_actions .link--action_menu::before {
-  background-color: #000000;
-  color: #ffffff;
 }
 .container--items_container {
   padding: 0;
@@ -124,15 +105,11 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   padding: 20px;
 }
 .container--items_container .item h1 {
-  color: #000000;
   cursor: pointer;
   font-size: 20px;
   font-size: 2rem;
   line-height: 30px;
   margin: 0;
-}
-.container--items_container .item:hover {
-  background-color: #f2f2f2;
 }
 .container--items_container .item .container--item_content {
   display: none;
@@ -146,33 +123,11 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   height: auto !important;
   max-width: 100%;
 }
-.container--items_container .item .container--item_content a {
-  color: #000000;
-}
-.container--items_container .item .container--item_content a:hover {
-  background-color: #000000;
-  color: #ffffff;
-}
-.container--items_container .item .container--item_content a:visited {
-  color: #999999;
-}
 .container--items_container .item .container--item_content blockquote,
 .container--items_container .item .container--item_content q {
   font-family: "Georgia";
   padding: 20px;
   font-style: italic;
-}
-.container--items_container .item--item_active {
-  background-color: #f2f2f2;
-}
-.container--items_container .item--item_starred h1 {
-  text-shadow: 0 0 2px #dddd00;
-}
-.container--items_container .item--item_starred [class*="--item_meta_bar"] .link--action_star::before {
-  color: #dddd00;
-}
-.container--items_container .item--item_read h1 {
-  color: #999999;
 }
 .container--items_container [class*="--item_meta_bar"] {
   font-size: 15px;
@@ -180,7 +135,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   padding: 5px 0;
 }
 .container--items_container [class*="--item_meta_bar"] .link {
-  color: #000000;
   display: inline-block;
   font-size: 20px;
   font-size: 2rem;
@@ -204,15 +158,12 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   font-size: 1.5rem;
 }
 .there-is-nothing-here {
-  color: #ffffff;
   font-size: 50px;
   font-size: 5rem;
   margin: 5%;
   text-align: center;
-  text-shadow: 0 0 50px #000000;
 }
 .container--global_actions {
-  background-color: #999999;
   left: 0;
   padding: 10px 20px;
   position: fixed;
@@ -222,7 +173,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   display: flex;
 }
 .container--global_actions .link {
-  color: #ffffff;
   cursor: pointer;
   font-size: 40px;
   font-size: 4rem;
@@ -247,7 +197,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   content: "/";
 }
 .container--feeds_actions {
-  background-color: #bbbbbb;
   left: 0;
   padding: 10px 20px;
   position: fixed;
@@ -257,7 +206,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   display: flex;
 }
 .container--feeds_actions .link {
-  color: #ffffff;
   cursor: pointer;
   font-size: 40px;
   font-size: 4rem;
@@ -284,7 +232,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
 }
 .container--subscription_form,
 .container--edit_form {
-  background-color: #999999;
   display: none;
   padding: 40px 0;
   position: absolute;
@@ -300,7 +247,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
 .container--subscription_form form input,
 .container--edit_form form input {
   border: none;
-  background-color: #ffffff;
   display: inline-block;
   padding: 10px;
   margin: 10px;
@@ -310,7 +256,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   display: block;
 }
 .container--progress_container {
-  background-color: #ffffff;
   bottom: 0;
   display: none;
   height: 0.5em;
@@ -320,7 +265,6 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   z-index: 4;
 }
 .container--progress_container span {
-  background-color: #55aaff;
   display: block;
   height: 1em;
   transition: width 0.5s;
@@ -390,5 +334,167 @@ body.menu-visible .container--global_actions .link--action_menu::before {
   .container--feeds_actions {
     top: 0;
     width: 25%;
+  }
+}
+html {
+  background-color: #ffffff;
+}
+#login-form {
+  background-color: #999999;
+}
+#login-form form input {
+  background-color: #ffffff;
+}
+.container--feeds_container {
+  background-color: #ffffff;
+}
+.container--feeds_container .item--feed_item h1 {
+  color: #000000;
+}
+.container--feeds_container .item--feed_item [class*="bubble--"] {
+  background-color: #f2f2f2;
+}
+.container--feeds_container .item--feed_item:hover h1,
+.container--feeds_container .item--feed_item--active h1 {
+  background-color: #f2f2f2;
+}
+.container--feeds_container .item--feed_item:hover [class*="bubble--"],
+.container--feeds_container .item--feed_item--active [class*="bubble--"] {
+  background-color: #ffffff;
+}
+.container--feeds_container .item--feed_item--status_error h1::before {
+  color: #ff0000;
+}
+body.menu-visible .container--global_actions .link--action_menu::before {
+  background-color: #000000;
+  color: #ffffff;
+}
+.container--items_container .item h1 {
+  color: #000000;
+}
+.container--items_container .item:hover {
+  background-color: #f2f2f2;
+}
+.container--items_container .item .container--item_content a {
+  color: #000000;
+}
+.container--items_container .item .container--item_content a:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.container--items_container .item .container--item_content a:visited {
+  color: #999999;
+}
+.container--items_container .item--item_active {
+  background-color: #f2f2f2;
+}
+.container--items_container .item--item_starred h1 {
+  text-shadow: 0 0 2px #dddd00;
+}
+.container--items_container .item--item_starred [class*="--item_meta_bar"] .link--action_star::before {
+  color: #dddd00;
+}
+.container--items_container .item--item_read h1 {
+  color: #999999;
+}
+.container--items_container [class*="--item_meta_bar"] .link {
+  color: #000000;
+}
+.there-is-nothing-here {
+  color: #ffffff;
+  text-shadow: 0 0 50px #000000;
+}
+.container--global_actions {
+  background-color: #999999;
+}
+.container--global_actions .link {
+  color: #ffffff;
+}
+.container--feeds_actions {
+  background-color: #bbbbbb;
+}
+.container--feeds_actions .link {
+  color: #ffffff;
+}
+.container--subscription_form,
+.container--edit_form {
+  background-color: #999999;
+}
+.container--subscription_form form input,
+.container--edit_form form input {
+  background-color: #ffffff;
+}
+.container--progress_container {
+  background-color: #ffffff;
+}
+.container--progress_container span {
+  background-color: #55aaff;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    background-color: #000000;
+  }
+  #login-form {
+    background-color: #404040;
+  }
+  .container--feeds_container {
+    background-color: #000000;
+  }
+  .container--feeds_container .item--feed_item h1 {
+    color: #ffffff;
+  }
+  .container--feeds_container .item--feed_item [class*="bubble--"] {
+    background-color: #404040;
+  }
+  .container--feeds_container .item--feed_item:hover h1,
+  .container--feeds_container .item--feed_item--active h1 {
+    background-color: #404040;
+  }
+  .container--feeds_container .item--feed_item:hover [class*="bubble--"],
+  .container--feeds_container .item--feed_item--active [class*="bubble--"] {
+    background-color: #303030;
+  }
+  .container--items_container .item h1 {
+    color: #ffffff;
+  }
+  .container--items_container .item:hover {
+    background-color: #404040;
+  }
+  .container--items_container .item .container--item_content {
+    color: #ffffff;
+  }
+  .container--items_container .item .container--item_content a {
+    color: #ffffff;
+  }
+  .container--items_container .item .container--item_content a:hover {
+    background-color: #000000;
+  }
+  .container--items_container .item .container--item_content a:visited {
+    color: #999999;
+  }
+  .container--items_container .item--item_active {
+    background-color: #404040;
+  }
+  .container--items_container .item--item_read h1 {
+    color: #a0a0a0;
+  }
+  .container--items_container [class*="--item_meta_bar"] {
+    color: #ffffff;
+  }
+  .container--items_container [class*="--item_meta_bar"] .link {
+    color: #ffffff;
+  }
+  .there-is-nothing-here {
+    text-shadow: 0 0 50px #404040;
+  }
+  .container--global_actions {
+    background-color: #404040;
+  }
+  .container--feeds_actions {
+    background-color: #404040;
+  }
+  .container--subscription_form,
+  .container--edit_form {
+    background-color: #606060;
   }
 }
